@@ -7,12 +7,9 @@ import {
 } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Body, Text, Title, Left, Right, Icon, Button, Footer, FooterTab, Segment, Form, Item, Input, Label, ListItem, CheckBox } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
-import Login from './index.login';
-import Logout from './index.logout';
 
 
-
-export default class Sidebar extends Component {
+export default class Logout extends Component {
   render() {
     return (
       <Content style={{ backgroundColor: '#f7f7f7', padding: 10 }}>
@@ -44,6 +41,6 @@ export default class Sidebar extends Component {
   }
 }
 
-module.exports = Sidebar;
+module.exports = Logout;
 
-AppRegistry.registerComponent('Sidebar', () => Sidebar);
+AppRegistry.registerComponent('Logout', () => Login);
