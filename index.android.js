@@ -1,93 +1,49 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Text,
   TouchableHighlight,
   View
 } from 'react-native';
-import {
-  Container,
-  Header,
-  Content,
-  Card,
-  CardItem,
-  Body,
-  Text
-} from 'native-base';
-
-export default class CardExample extends Component {
-  render() {
-    return (
-      <Container>
-        <Header />
-        <Content>
-          <Card>
-            <CardItem>
-              <Body>
-                <Text>
-                   Hello!
-                </Text>
-              </Body>
-            </CardItem>
-          </Card>
-        </Content>
-      </Container>
-    );
-  }
-}
+import { Container, Header, Content, Card, CardItem, Body, Text, Title, Left, Right, Icon, Button, Footer, FooterTab, Segment, Drawer } from 'native-base';
+import { Col, Row, Grid } from 'react-native-easy-grid';
+import SideBar from './index.sidebar';
 
 export default class rn3dtksample extends Component {
   onPress() {
     alert('Hello');
   }
+  closeDrawer = () => {
+    this.drawer._root.close()
+  };
+  openDrawer = () => {
+    this.drawer._root.open()
+  };
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-        <TouchableHighlight onPress={this.onPress}>
-          <Text>
-            Wow.
-          </Text>
-        </TouchableHighlight>
-        
-      </View>
+      <Container>
+        <Drawer
+          ref={(ref) => { this.drawer = ref; }}
+          content={<SideBar navigator={this.navigator} />}
+          onClose={() => this.closeDrawer()} >
+          <Grid>
+            <Header>
+              <Body>
+                <Title>3D Toolkit</Title>
+              </Body>
+              <Right />
+            </Header>
+            <Row size={75} style={{ backgroundColor: '#fff', padding: 10 }}>
+              <Text>Render Stream</Text>
+            </Row>
+            <Row size={25} style={{ backgroundColor: '#ccc', padding: 10 }}>
+              <Text>Connection Log</Text>
+            </Row>
+          </Grid>
+        </Drawer>
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('rn3dtksample', () => rn3dtksample);
