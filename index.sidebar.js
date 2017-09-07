@@ -13,9 +13,10 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 export default class Sidebar extends Component {
   render() {
     return (
-          <Content style={{backgroundColor:'#FF0000'}}>
-            <Text>Drawer</Text>
-          </Content>
+      <Content style={{ backgroundColor: '#f7f7f7', padding: 10 }}>
+        <Title style={{color: 'black', padding: 10 }}>Signal Server Login</Title>
+        <Text>Drawer</Text>
+      </Content>
     );
   }
 }
