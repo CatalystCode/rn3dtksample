@@ -10,6 +10,9 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 
 
 export default class Login extends Component {
+  changeView() {
+    alert('Button Clicked');
+  }
   render() {
     return (
       <Content style={{ backgroundColor: '#f7f7f7', padding: 10 }}>
@@ -17,7 +20,7 @@ export default class Login extends Component {
 
         
         <Button bordered dark small style={{ marginTop: 5}}>
-          <Text>Connect</Text>
+          <Text onPress={this.changeView}>Connect</Text>
         </Button>
         <Form>
           <Item inlineLabel>
