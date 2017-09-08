@@ -15,17 +15,16 @@ export default class Sidebar extends Component {
   constructor() {
     super();
     this.state = {
-      status: true
+      loggedIn: false
     }
   }
 
-  ShowHideLogin = () => {
-    if (this.state.status == true) {
-      this.setState({ status: false })
-    }
-    else {
-      this.setState({ status: true })
-    }
+  onLogIn = () => {
+    this.setState(() => ({ loggedIn: true }))
+  }
+                  
+  onLogOut = () => {
+    this.setState(() => ({ loggedIn: false }))
   }
 
   render() {
@@ -33,10 +32,8 @@ export default class Sidebar extends Component {
 
       <Content style={{ backgroundColor: '#f7f7f7', padding: 10 }}>
         {
-          this.state.status ? <Login navigator={this.navigator} /> : <Logout navigator={this.navigator} />
+          this.state.status ? <Login onLogIn={this.onLogIn} /> : <Logout onLogOut={this.onLogOut} />
         }
-
-      <Button title="Hide Text Component" onPress={this.ShowHideLogin} />
       </Content>
 
     );
@@ -44,3 +41,5 @@ export default class Sidebar extends Component {
 }
 
 module.exports = Sidebar;
+
+AppRegistry.registerComponent('Sidebar', () => Sidebar);
