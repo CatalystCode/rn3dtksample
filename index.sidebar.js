@@ -19,23 +19,22 @@ export default class Sidebar extends Component {
     }
   }
 
-  onLogIn = () => {
+  onLogin = () => {
     this.setState(() => ({ loggedIn: true }))
-  }
+  };
                   
-  onLogOut = () => {
+  onLogout = () => {
     this.setState(() => ({ loggedIn: false }))
-  }
+  };
 
   render() {
     return (
 
       <Content style={{ backgroundColor: '#f7f7f7', padding: 10 }}>
         {
-          this.state.status ? <Login onLogIn={this.onLogIn} /> : <Logout onLogOut={this.onLogOut} />
+          this.state.status ? <Login onLogin={this.onLogin} /> : <Logout onLogout={this.onLogout} />
         }
       </Content>
-
     );
   }
 }

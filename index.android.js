@@ -35,6 +35,7 @@ export default class rn3dtksample extends Component {
             </Header>
             <Row size={75} style={{ backgroundColor: '#fff', padding: 10 }}>
               <Text>Render Stream</Text>
+              
             </Row>
             <Row size={25} style={{ backgroundColor: '#ccc', padding: 10 }}>
               <Text>Connection Log</Text>

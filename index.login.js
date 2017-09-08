@@ -10,18 +10,14 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 
 
 export default class Login extends Component {
-  changeView() {
-    alert('Button Clicked');
-  }
+  
   render() {
+    const { onLogin } = this.props;
     return (
       <Content style={{ backgroundColor: '#f7f7f7', padding: 10 }}>
         <Title style={{ color: 'black', padding: 10, borderBottomColor: '#c0c0c0', borderBottomWidth: 1, paddingBottom: 5, marginBottom: 5 }}>Signal Server Login</Title>
 
-        
-        <Button bordered dark small style={{ marginTop: 5}}>
-          <Text onPress={this.changeView}>Connect</Text>
-        </Button>
+        <View>
         <Form>
           <Item inlineLabel>
             <Label>Server</Label>
@@ -38,6 +34,12 @@ export default class Login extends Component {
             <Text>Use temp password</Text>
           </Body>
         </ListItem>
+
+        <Button bordered dark small style={{ marginTop: 5}} onPress={onLogin}>
+          <Text>Connect</Text>
+        </Button>
+
+        </View>
 
       </Content>
     );

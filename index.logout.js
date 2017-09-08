@@ -11,12 +11,13 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 
 export default class Logout extends Component {
   render() {
+    const { onLogout } = this.props;
     return (
       <Content style={{ backgroundColor: '#f7f7f7', padding: 10 }}>
-        <Title style={{ color: 'black', padding: 10, borderBottomColor: '#c0c0c0', borderBottomWidth: 1, paddingBottom: 5, marginBottom: 5 }}>Signal Server Login</Title>
+        <Title style={{ color: 'black', padding: 10, borderBottomColor: '#c0c0c0', borderBottomWidth: 1, paddingBottom: 5, marginBottom: 5 }}>Signal Server Logout</Title>
 
-        
-        <Button bordered dark small style={{ marginTop: 5}}>
+        <View>
+        <Button bordered dark small style={{ marginTop: 5}} onPress={onLogout}>
           <Text>Connect</Text>
         </Button>
         <Form>
@@ -35,6 +36,7 @@ export default class Logout extends Component {
             <Text>Use temp password</Text>
           </Body>
         </ListItem>
+        </View>
 
       </Content>
     );
